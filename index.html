@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<!--
+  ────────────────────────────────────────────────────────────
+  Seungwon Jeong — 개인 연구 홈페이지 (CV 반영판)
+
+  올리는 법
+  1. 저장소 이름: Swon-Jeong-finance.github.io
+  2. 이 파일을 index.html 로 루트에 업로드
+  3. Settings → Pages → Deploy from a branch → main / (root)
+  → 주소: https://swon-jeong-finance.github.io
+
+  남은 [ ] 는 세 곳: Google Scholar 주소, LinkedIn 주소,
+  그리고 논문별 DOI 링크(href="#" 인 곳)이다.
+  ────────────────────────────────────────────────────────────
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seungwon Jeong — Financial Engineering</title>
+<meta name="description" content="Seungwon Jeong — postdoctoral researcher in financial engineering. Stochastic control, dynamic portfolio choice, and machine learning for finance.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,380;0,9..144,480;1,9..144,380&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;450;550&family=Noto+Serif+KR:wght@400;500&family=Noto+Sans+KR:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0e1420;
+    --paper:#f7f8fa;
+    --card:#ffffff;
+    --muted:#5d6675;
+    --faint:#8b93a1;
+    --rule:#e3e7ed;
+    --accent:#2b4fd8;
+    --accent-soft:#e8edfb;
+    --amber:#9a6b12;
+    --serif:"Fraunces",Georgia,serif;
+    --sans:"IBM Plex Sans",system-ui,sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,monospace;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:var(--sans);font-size:16px;line-height:1.7;
+    -webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px}
+
+  .hero{border-bottom:1px solid var(--rule);background:var(--card)}
+  .hero-inner{max-width:1060px;margin:0 auto;padding:96px 28px 60px}
+  .kicker{font-family:var(--mono);font-size:12px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--accent);margin:0 0 14px}
+  h1{font-family:var(--serif);font-weight:480;font-size:clamp(40px,7vw,64px);
+    letter-spacing:-.02em;line-height:1.04;margin:0 0 6px}
+  .ko-name{font-family:"Noto Serif KR",var(--serif);font-weight:500;
+    font-size:clamp(17px,2.6vw,21px);letter-spacing:.28em;color:var(--muted);
+    margin:0 0 22px}
+  .lede{font-size:18px;line-height:1.65;color:var(--muted);max-width:58ch;margin:0 0 12px}
+  .lede strong{color:var(--ink);font-weight:550}
+  .lede-ko{font-family:"Noto Sans KR",var(--sans);font-size:15.5px;line-height:1.75;
+    color:var(--faint);max-width:58ch;margin:0 0 30px}
+  .contact{display:flex;flex-wrap:wrap;gap:10px}
+  .chip{font-family:var(--mono);font-size:12.5px;padding:7px 14px;
+    border:1px solid var(--rule);border-radius:999px;background:var(--card);color:var(--ink);
+    transition:border-color .15s,color .15s,background .15s}
+  .chip:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-soft)}
+  .chip .arr{color:var(--faint);margin-left:5px;transition:color .15s}
+  .chip:hover .arr{color:var(--accent)}
+
+  .grid{max-width:1060px;margin:0 auto;padding:0 28px;
+    display:grid;grid-template-columns:172px minmax(0,1fr);gap:56px}
+  .rail{padding:64px 0}
+  .rail nav{position:sticky;top:40px;display:flex;flex-direction:column;gap:2px}
+  .rail a{font-family:var(--mono);font-size:12px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--faint);
+    padding:7px 0 7px 16px;border-left:2px solid transparent;
+    transition:color .15s,border-color .15s}
+  .rail a:hover{color:var(--ink)}
+  .rail a.on{color:var(--accent);border-left-color:var(--accent)}
+  main{padding:64px 0 110px;min-width:0}
+
+  section{margin-bottom:72px;scroll-margin-top:32px}
+  section:last-of-type{margin-bottom:0}
+  h2{font-family:var(--serif);font-weight:480;font-size:26px;letter-spacing:-.01em;margin:0 0 24px}
+  p{margin:0 0 14px;max-width:66ch}
+  .quiet{color:var(--muted)}
+  .kw{font-family:var(--mono);font-size:12.5px;color:var(--faint);letter-spacing:.02em;line-height:2}
+
+  .paper{background:var(--card);border:1px solid var(--rule);border-radius:14px;
+    padding:22px 24px;margin-bottom:14px;transition:border-color .15s,box-shadow .15s}
+  .paper:hover{border-color:#c9d2e2;box-shadow:0 2px 14px rgba(14,20,32,.05)}
+  .paper-top{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:8px}
+  .yr{font-family:var(--mono);font-size:12.5px;color:var(--faint)}
+  .tag{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;
+    padding:3px 9px;border-radius:999px}
+  .tag.pub{color:var(--accent);background:var(--accent-soft)}
+  .tag.rev{color:var(--amber);background:#f6efdd}
+  .tag.wip{color:var(--muted);background:#edeff3}
+  .p-title{font-family:var(--serif);font-weight:480;font-size:19px;line-height:1.35;margin:0 0 6px}
+  .p-venue{font-size:14.5px;color:var(--muted);margin:0 0 12px}
+  .p-venue i{color:var(--ink)}
+  .p-links{display:flex;flex-wrap:wrap;gap:8px}
+  .mini{font-family:var(--mono);font-size:12px;color:var(--muted);
+    padding:4px 11px;border:1px solid var(--rule);border-radius:8px;
+    transition:color .15s,border-color .15s}
+  .mini:hover{color:var(--accent);border-color:var(--accent)}
+
+  .row{display:grid;grid-template-columns:130px 1fr;gap:20px;
+    padding:14px 2px;border-bottom:1px solid var(--rule)}
+  .row:last-child{border-bottom:none}
+  .row .yr{padding-top:4px}
+  .row b{font-weight:550}
+
+  footer{border-top:1px solid var(--rule);background:var(--card)}
+  .foot{max-width:1060px;margin:0 auto;padding:26px 28px;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
+    font-family:var(--mono);font-size:12px;color:var(--faint)}
+
+  @media (max-width:820px){
+    .grid{grid-template-columns:1fr;gap:0}
+    .rail{padding:28px 0 0}
+    .rail nav{position:static;flex-direction:row;flex-wrap:wrap;gap:4px 18px;
+      border-bottom:1px solid var(--rule);padding-bottom:16px}
+    .rail a{border-left:none;padding:4px 0}
+    main{padding-top:40px}
+    .hero-inner{padding:88px 22px 48px}
+    .grid,.foot{padding-left:22px;padding-right:22px}
+    .row{grid-template-columns:1fr;gap:4px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *{transition:none!important;animation:none!important}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <p class="kicker">Financial Engineering · Stochastic Control · Machine Learning</p>
+    <h1>Seungwon Jeong</h1>
+    <p class="ko-name">정승원</p>
+    <p class="lede">
+      <strong>I work at the intersection of stochastic control and deep learning.</strong>
+      My research develops Pontryagin-guided and policy-iteration methods for dynamic
+      portfolio choice, alongside machine-learning models for asset pricing and
+      financial time series.
+    </p>
+    <p class="lede-ko">
+      확률제어와 심층학습의 접점에서 연구합니다. 동적 포트폴리오 선택을 위한
+      폰트랴긴 기반 정책 최적화와 정책 반복 방법, 그리고 자산가격 결정과 금융
+      시계열을 위한 기계학습 모형을 개발합니다.
+    </p>
+    <nav class="contact" aria-label="Contact">
+      <a class="chip" href="mailto:junior1492@jnu.ac.kr">Email<span class="arr">↗</span></a>
+      <a class="chip" href="[구글 스칼라 주소]">Scholar<span class="arr">↗</span></a>
+      <a class="chip" href="https://github.com/Swon-Jeong-finance">GitHub<span class="arr">↗</span></a>
+      <a class="chip" href="[링크드인 주소]">LinkedIn<span class="arr">↗</span></a>
+      <a class="chip" href="cv.pdf">CV · PDF<span class="arr">↓</span></a>
+    </nav>
+  </div>
+</header>
+
+<div class="grid">
+  <aside class="rail">
+    <nav aria-label="Sections">
+      <a href="#about" class="on">About</a>
+      <a href="#positions">Positions</a>
+      <a href="#education">Education</a>
+      <a href="#publications">Publications</a>
+      <a href="#working">Working&nbsp;Papers</a>
+      <a href="#code">Code</a>
+      <a href="#projects">Projects</a>
+      <a href="#talks">Talks</a>
+    </nav>
+  </aside>
+
+  <main>
+    <section id="about">
+      <h2>About</h2>
+      <p>
+        I am a postdoctoral research fellow at Chonnam National University, working with
+        Jaegi Jeon. Previously I held postdoctoral positions at Sungkyunkwan University
+        with Jeonggyu Huh and at Hankuk University of Foreign Studies with Minsuk Kwak.
+        I received my Ph.D. in Financial Engineering from Ajou University under
+        Hyeng Keun Koo.
+      </p>
+      <p>
+        My current work centers on continuous-time portfolio optimization with neural
+        methods, including Pontryagin-guided policy optimization and physics-informed
+        policy iteration, and on empirical asset pricing and generative modeling of
+        financial data.
+      </p>
+      <p class="kw">
+        empirical asset pricing · portfolio optimization · machine learning · deep learning ·
+        generative AI · reinforcement learning<br>
+        Python · SAS · R · MATLAB
+      </p>
+    </section>
+
+    <section id="positions">
+      <h2>Positions</h2>
+      <div class="row">
+        <span class="yr">2024.9 —</span>
+        <p style="margin:0"><b>Postdoctoral Research Fellow</b>, Chonnam National University<br>
+        <span class="quiet">Global-Learning &amp; Academic research institution · with Jaegi Jeon</span></p>
+      </div>
+      <div class="row">
+        <span class="yr">2024.3 – 2024.8</span>
+        <p style="margin:0"><b>Postdoctoral Research Fellow</b>, Sungkyunkwan University<br>
+        <span class="quiet">Department of Mathematics · with Jeonggyu Huh</span></p>
+      </div>
+      <div class="row">
+        <span class="yr">2023.9 – 2024.2</span>
+        <p style="margin:0"><b>Postdoctoral Research Fellow</b>, Hankuk University of Foreign Studies<br>
+        <span class="quiet">Department of Mathematics · with Minsuk Kwak</span></p>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <div class="row">
+        <span class="yr">2018 – 2023</span>
+        <p style="margin:0"><b>Ph.D., Financial Engineering</b>, Ajou University<br>
+        <span class="quiet">Advisor: Hyeng Keun Koo</span></p>
+      </div>
+      <div class="row">
+        <span class="yr">2011 – 2018</span>
+        <p style="margin:0"><b>B.S., Mathematics and Business Administration</b>, Chonnam National University</p>
+      </div>
+    </section>
+
+    <section id="publications">
+      <h2>Publications</h2>
+
+      <article class="paper">
+        <div class="paper-top"><span class="yr">2026</span><span class="tag pub">Published</span></div>
+        <p class="p-title">Equity Premium Forecasting with Reliability-Screened Forward-Looking Signals</p>
+        <p class="p-venue">with Jeonggyu Huh* and Jaegi Jeon · <i>PLOS One</i>, 21(5), e0341578</p>
+        <div class="p-links">
+          <a class="mini" href="#">DOI</a>
+          <a class="mini" href="https://github.com/Swon-Jeong-finance/ERP_forward_looking">Code</a>
+        </div>
+      </article>
+
+      <article class="paper">
+        <div class="paper-top"><span class="yr">2026</span><span class="tag pub">Published</span></div>
+        <p class="p-title">DeepONet-based Surrogate Modeling for Bond Option Pricing</p>
+        <p class="p-venue">with Sanghyun Lee* and Jeonggyu Huh · <i>AIMS Mathematics</i>, 11(3), 5853–5896</p>
+        <div class="p-links"><a class="mini" href="#">DOI</a></div>
+      </article>
+
+      <article class="paper">
+        <div class="paper-top"><span class="yr">2026</span><span class="tag pub">Published</span></div>
+        <p class="p-title">Optimal Investment under Irreversible Consumption and Locally Risk-Seeking Preferences</p>
+        <p class="p-venue">with Junkee Jeon* and Hyeng Keun Koo · <i>Journal of Industrial and Management Optimization</i>, 22(2), 1063–1086</p>
+        <div class="p-links"><a class="mini" href="#">DOI</a></div>
+      </article>
+
+      <article class="paper">
+        <div class="paper-top"><span class="yr">2025</span><span class="tag pub">Published</span></div>
+        <p class="p-title">LSTM-based Dynamic Correlation Forecasting with Economic Conditions</p>
+        <p class="p-venue">with Seungwoo Ha and Jeonggyu Huh* · <i>Finance Research Letters</i>, 108425</p>
+        <div class="p-links"><a class="mini" href="#">DOI</a></div>
+      </article>
+
+      <article class="paper">
+        <div class="paper-top"><span class="yr">2025</span><span class="tag pub">Published</span></div>
+        <p class="p-title">Pontryagin-Guided Direct Policy Optimization for Continuous-time Portfolio Problem</p>
+        <p class="p-venue">with Jeonggyu Huh* and Jaegi Jeon* · <i>Journal of Industrial and Management Optimization</i></p>
+        <div class="p-links"><a class="mini" href="#">DOI</a></div>
+      </article>
+
+      <article class="paper">
+        <div class="paper-top"><span class="yr">2025</span><span class="tag pub">Published</span></div>
+        <p class="p-title">Learning Distributions for Continuous-Time Financial Models</p>
+        <p class="p-venue">with Jeonggyu Huh* · <i>Computational Economics</i>, 1–35</p>
+        <div class="p-links"><a class="mini" href="#">DOI</a></div>
+      </article>
+
+      <article class="paper">
+        <div class="paper-top"><span class="yr">2025</span><span class="tag pub">Published</span></div>
+        <p class="p-title">Dual-Uncertainty Modeling in Financial Time-Series via VMD-LSTM with Concrete Dropout and VMD-WGAN</p>
+        <p class="p-venue">with Jeonggyu Huh*, Dajin Kim, and Minseok Jung · <i>Networks and Heterogeneous Media</i>, 20(5), 1411–1436</p>
+        <div class="p-links"><a class="mini" href="#">DOI</a></div>
+      </article>
+
+      <article class="paper">
+        <div class="paper-top"><span class="yr">2024</span><span class="tag pub">Published</span></div>
+        <p class="p-title">Accelerating SDE Simulation through Learning of Stochastic Dynamics</p>
+        <p class="p-venue">with Ji-Hun Kim, Jitae Jung, and Jeonggyu Huh* · <i>Journal of the Korean Society for Industrial and Applied Mathematics</i></p>
+        <div class="p-links"><a class="mini" href="#">DOI</a></div>
+      </article>
+
+      <article class="paper">
+        <div class="paper-top"><span class="yr">2022</span><span class="tag pub">Published</span></div>
+        <p class="p-title">Asset Allocation Strategy and Convergence with Epstein–Zin Utility Function</p>
+        <p class="p-venue">with Seryoong Ahn, Sang Jin Ahn, and Hyeng Keun Koo* · <i>Korean Management Science Review</i>, 39(3), 1–14</p>
+        <div class="p-links"><a class="mini" href="#">DOI</a></div>
+      </article>
+
+      <article class="paper">
+        <div class="paper-top"><span class="yr">2022</span><span class="tag pub">Published</span></div>
+        <p class="p-title">Optimal Portfolio Choice in a Binomial-Tree and Its Convergence</p>
+        <p class="p-venue">with Seryoong Ahn*, Sang Jin Ahn, and Hyeng Keun Koo · <i>East Asian Mathematical Journal</i>, 38(3), 277–292</p>
+        <div class="p-links"><a class="mini" href="#">DOI</a></div>
+      </article>
+    </section>
+
+    <section id="working">
+      <h2>Submitted &amp; Working Papers</h2>
+
+      <article class="paper">
+        <div class="paper-top"><span class="yr">2026</span><span class="tag rev">Under revision</span></div>
+        <p class="p-title">MarketGANs: Multivariate Financial Time-Series Data Augmentation Using Generative Adversarial Networks</p>
+        <p class="p-venue">under revision at <i>Financial Innovation</i></p>
+      </article>
+
+      <article class="paper">
+        <div class="paper-top"><span class="yr">2026</span><span class="tag rev">Under review</span></div>
+        <p class="p-title">Neural Policy Iteration for Dynamic Portfolio Choice with Control-Dependent Diffusion</p>
+      </article>
+
+      <article class="paper">
+        <div class="paper-top"><span class="yr"></span><span class="tag wip">Working paper</span></div>
+        <p class="p-title">Pontryagin-Guided Policy Iteration for Discrete-Time Infinite-Horizon Portfolio Choice</p>
+        <p class="p-venue">with Jeonggyu Huh</p>
+      </article>
+
+      <article class="paper">
+        <div class="paper-top"><span class="yr"></span><span class="tag wip">Working paper</span></div>
+        <p class="p-title">Breaking the Dimensional Barrier in Non-Markovian Dynamic Portfolio Choice</p>
+        <p class="p-venue">with Jeonggyu Huh</p>
+        <div class="p-links">
+          <a class="mini" href="https://github.com/Swon-Jeong-finance/PGDPO_with_delay">Code</a>
+        </div>
+      </article>
+
+      <article class="paper">
+        <div class="paper-top"><span class="yr"></span><span class="tag wip">Working paper</span></div>
+        <p class="p-title">Adversarial Time-Series Domain Adaptation for Early-Stage IPO Price Prediction</p>
+        <p class="p-venue">with Youngwoo Lee and Jeonggyu Huh</p>
+      </article>
+
+      <article class="paper">
+        <div class="paper-top"><span class="yr"></span><span class="tag wip">Working paper</span></div>
+        <p class="p-title">Scalable Dynamic Portfolio Allocation via Physics-Informed Neural Networks</p>
+        <p class="p-venue">with Yeoneung Kim and Jeonggyu Huh</p>
+      </article>
+
+      <article class="paper">
+        <div class="paper-top"><span class="yr"></span><span class="tag wip">Working paper</span></div>
+        <p class="p-title">Investment with Taxes</p>
+        <p class="p-venue">with Hyeng Keun Koo, Jeonggyu Huh, and Byung Hwa Lim</p>
+      </article>
+    </section>
+
+    <section id="code">
+      <h2>Code</h2>
+
+      <article class="paper">
+        <div class="paper-top"><span class="yr">Jupyter · PyTorch</span></div>
+        <p class="p-title"><a href="https://github.com/Swon-Jeong-finance/PGDPO_with_delay">PGDPO_with_delay</a></p>
+        <p class="p-venue" style="margin-bottom:0">Pontryagin-guided direct policy optimization for portfolio problems with delayed state dynamics.</p>
+      </article>
+
+      <article class="paper">
+        <div class="paper-top"><span class="yr">Python</span></div>
+        <p class="p-title"><a href="https://github.com/Swon-Jeong-finance/pinn_pi_finite_horizon">pinn_pi_finite_horizon</a></p>
+        <p class="p-venue" style="margin-bottom:0">Physics-informed neural policy iteration for finite-horizon dynamic portfolio choice.</p>
+      </article>
+
+      <article class="paper">
+        <div class="paper-top"><span class="yr">Python</span></div>
+        <p class="p-title"><a href="https://github.com/Swon-Jeong-finance/pinn_pi_empirical">pinn_pi_empirical</a></p>
+        <p class="p-venue" style="margin-bottom:0">Empirical dynamic asset allocation with PINN-based policy iteration on industry-portfolio universes.</p>
+      </article>
+
+      <article class="paper">
+        <div class="paper-top"><span class="yr">Python</span></div>
+        <p class="p-title"><a href="https://github.com/Swon-Jeong-finance/ERP_forward_looking">ERP_forward_looking</a></p>
+        <p class="p-venue" style="margin-bottom:0">Replication code for “Equity Premium Forecasting with Reliability-Screened Forward-Looking Signals” (PLOS One, 2026).</p>
+      </article>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="row">
+        <span class="yr">2024.8 – 2025.1</span>
+        <p style="margin:0"><b>Developing an Extended Economic Scenario Generator with Machine Learning</b><br>
+        <span class="quiet">Industry research project · Korea Asset Pricing (KAP)</span></p>
+      </div>
+    </section>
+
+    <section id="talks">
+      <h2>Talks</h2>
+      <div class="row"><span class="yr">2026.5</span>
+        <p style="margin:0"><b>KSIAM 2026 Spring Conference</b><br><span class="quiet">UNIST, Ulsan</span></p></div>
+      <div class="row"><span class="yr">2025.4</span>
+        <p style="margin:0"><b>KMS 2025 Spring Meeting</b><br><span class="quiet">KAIST, Daejeon</span></p></div>
+      <div class="row"><span class="yr">2024.5</span>
+        <p style="margin:0"><b>KSIAM 2024 Spring Conference</b><br><span class="quiet">Kyungpook National University, Daegu</span></p></div>
+      <div class="row"><span class="yr">2023.11</span>
+        <p style="margin:0"><b>KSIAM 2023 Annual Meeting</b><br><span class="quiet">Kim Dae-jung Convention Center, Gwangju</span></p></div>
+      <div class="row"><span class="yr">2023.5</span>
+        <p style="margin:0"><b>KSIAM 2023 Spring Conference</b><br><span class="quiet">Alpensia, Pyeongchang</span></p></div>
+      <div class="row"><span class="yr">2022.11</span>
+        <p style="margin:0"><b>KSIAM 2022 Annual Meeting</b><br><span class="quiet">Sono Calm, Jeju</span></p></div>
+      <div class="row"><span class="yr">2021.12</span>
+        <p style="margin:0"><b>KSIAM 2021 Annual Meeting</b><br><span class="quiet">BEXCO, Busan</span></p></div>
+      <div class="row"><span class="yr">2021.12</span>
+        <p style="margin:0"><b>KAFE-SKKU Winter Conference of Finance</b><br><span class="quiet">Online</span></p></div>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <div class="foot">
+    <span>© 2026 Seungwon Jeong</span>
+    <span>Last updated 2026-08 · GitHub Pages</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var links=document.querySelectorAll('.rail a');
+  var map={};links.forEach(function(a){map[a.getAttribute('href').slice(1)]=a});
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){
+      links.forEach(function(a){a.classList.remove('on')});
+      var a=map[e.target.id];if(a)a.classList.add('on');
+    }});
+  },{rootMargin:'-20% 0px -70% 0px'});
+  document.querySelectorAll('main section').forEach(function(s){io.observe(s)});
+})();
+</script>
+</body>
+</html>
